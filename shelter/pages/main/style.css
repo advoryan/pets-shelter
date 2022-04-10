@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a,
+:focus,
+:hover,
+:active,
+:visited {
+  outline: none;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+:visited {
+  color: inherit;
+}
+
+/* nav, 
+footer,
+header,
+aside{
+	display: block;
+} */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  /* line-height: -1; */
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.wrapper {
+  outline: 1px solid red;
+  width: 100%;
+}
+
+.containter {
+  border: 1px solid blue;
+  margin: 0 auto;
+  height: 500px;
+  max-width: 1280px;
+}
+
+.brown-bg {
+  /* background: -webkit-gradient(linear, left top, right top, from(#5b483a), to(#262425)); */
+  background: linear-gradient(to right, #5b483a, #262425);
+}
+
+@font-face {
+  font-family: "georgia";
+  src: url("../../assets/fonts/georgia.ttf");
+}
+
+@font-face {
+  font-family: "arial";
+  src: url("../../assets/fonts/arial.ttf");
+}
+
+h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 100px;
+}
+/*# sourceMappingURL=style.css.map */
