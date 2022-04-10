@@ -1,0 +1,16 @@
+.logo {
+    display: block;
+    padding-right: 50px;
+    &__title {
+        @include font(georgia, 3.2rem, 3.6rem);
+        letter-spacing: 0.06em;
+        color: $color-primary;
+    }
+    &__subtitle {
+        @include font(arial, 1.3rem, 1.5rem);
+        letter-spacing: 0.1em;
+        color: $color-light-xl;
+        padding-top: 10px;
+        padding-left: 4px;
+    }
+}

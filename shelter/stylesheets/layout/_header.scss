@@ -1,4 +1,13 @@
-h1 {
-  font-family: $font-hdr; 
-  font-size: 100px;
+.header {
+    &__containter {
+        display: flex;
+    }
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+        margin: 60px 40px 20px 40px;
+    }
 }
+

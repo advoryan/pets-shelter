@@ -1,0 +1,14 @@
+.start {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__inner {
+        outline: 1px solid red;
+    }
+    &__dog-img {
+        margin-top: 41px;
+        margin-right: 40px;
+        outline: 1px solid red;
+    }
+}

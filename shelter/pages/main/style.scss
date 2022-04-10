@@ -5,9 +5,18 @@
 
 @import
 '../../stylesheets/base/base',
-'../../stylesheets/base/fonts';
+'../../stylesheets/base/fonts',
+'../../stylesheets/abstracts/variables',
+'../../stylesheets/abstracts/mixins';
 
 @import 
+'../../stylesheets/components/container',
+'../../stylesheets/components/logo',
+'../../stylesheets/components/nav';
+
+@import 
+'../../stylesheets/pages/main',
 '../../stylesheets/layout/header',
-'../../stylesheets/layout/footer';
+'../../stylesheets/layout/footer',
+'../../stylesheets/layout/start_scr';
 
