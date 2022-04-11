@@ -1,0 +1,42 @@
+.help {
+    background-color: $color-light-l;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 80px 0 100px 0;
+        h2 {
+            @include font(georgia, 3.5rem, 4.5rem);
+            color: $color-dark-l;
+            text-align: center;
+            letter-spacing: 2.0px;
+            margin-bottom: 60px;
+        }
+    }
+}
+.help-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 110px;
+    gap: 55px 120px;
+    .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .img {
+            display: flex;
+            justify-content: center;
+        }
+        h4 {
+            margin-top: 30px;
+            @include font(georgia, 2rem, 2.3rem);
+            color: $color-dark-l;
+            letter-spacing: 0.06em;
+            text-align: center;
+        }
+        
+    }
+}

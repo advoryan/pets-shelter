@@ -1,0 +1,31 @@
+.about {
+    outline: 1px solid red;
+    &__container {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 75px 100px 98px 100px;
+    }
+    &__img {
+        padding-top: 5px;
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        max-width: 430px;
+        h2 {
+            @include font(georgia, 3.5rem, 4.4rem);
+            color: $color-dark-xl;
+            letter-spacing: 2.2px;
+            margin-top: 20px;
+            margin-bottom: 25px;
+        }
+        p {
+            @include font(arial, 1.5rem, 2.4rem);
+            color: $color-dark-xl;
+            margin-bottom: 25px;
+        }
+        .p-end {
+            margin-bottom: 0;
+        }
+    }
+}

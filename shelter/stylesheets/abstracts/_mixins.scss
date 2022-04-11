@@ -19,3 +19,7 @@
   background-color: $color-primary-light;
   border: $color-primary-light;
 }
+
+%transition{
+  transition: all .5s ease-out;
+}

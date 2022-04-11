@@ -1,0 +1,74 @@
+.btn {
+  display: inline-block;
+  border: solid 2px $color-primary;
+  border-radius: 100px;
+  @include font(georgia, 1.7em, 22px);
+  letter-spacing: 0.06em;
+  color: $color-dark-3xl;
+  cursor: pointer;
+  @extend %transition;
+  &:hover {
+    @include btn-hover;
+  }
+  &--start {
+    width: 207px;
+    height: 52px;
+    background-color: $color-primary;
+  }
+  &--card {
+    width: 187px;
+    height: 52px;
+  }
+  &--friends {
+    width: 261px;
+    height: 52px;
+    background-color: $color-primary;
+  }
+}
+.btn-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px $color-primary;
+  border-radius: 50%;
+  background: transparent;
+  height: 52px;
+  width: 52px;
+  font-size: 23px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  top: 50%;
+  transition: 0.5s;
+  cursor: pointer;
+  @extend %transition;
+  &:hover {
+    @include btn-hover;
+  }
+}
+.btn-credit {
+  display: flex;
+  max-width: 350px;
+  gap: 15px;
+  background-color: $color-primary;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 9px;
+  transition: 0.5s;
+  &__img {
+    display: inline-block;
+    background-image: url("../../assets/images/svg/credit-card.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 23px;
+  }
+  &__body {
+    @include font(georgia, 2rem, 2.3rem);
+    letter-spacing: 0.06em;
+    color: $color-dark-l;
+  }
+  &:hover {
+    background-color: $color-hover;
+    border: $color-hover;
+  }
+}
