@@ -1,0 +1,23 @@
+.slider {
+  position: relative;
+  width: 100%;
+  &__items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 9px;
+  }
+  &__card {
+    &:hover {
+      cursor: url("../../assets/img/pointer-hover.png"), pointer;
+    }
+    &:hover > button {
+      @include btn-hover;
+    }
+    &:hover > img {
+      filter: drop-shadow(0 2px 35px rgba(13, 13, 13, 0.04));
+      @extend %transition;
+    }
+
+  }
+}
