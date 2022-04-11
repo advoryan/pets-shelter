@@ -1,31 +1,31 @@
 .about {
-    outline: 1px solid red;
-    &__container {
-        display: flex;
-        justify-content: space-evenly;
-        padding: 75px 100px 98px 100px;
+  &__container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 80px;
+    gap: 120px;
+    padding-bottom: 100px;
+  }
+  &__img {
+    & img {
+      display: block;
     }
-    &__img {
-        padding-top: 5px;
-    }
-    &__info {
-        display: flex;
-        flex-direction: column;
-        max-width: 430px;
-        h2 {
-            @include font(georgia, 3.5rem, 4.4rem);
-            color: $color-dark-xl;
-            letter-spacing: 2.2px;
-            margin-top: 20px;
-            margin-bottom: 25px;
-        }
-        p {
-            @include font(arial, 1.5rem, 2.4rem);
-            color: $color-dark-xl;
-            margin-bottom: 25px;
-        }
-        .p-end {
-            margin-bottom: 0;
-        }
-    }
+  }
+  &-title {
+    color: $color-dark-l;
+    padding-top: 14px;
+
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 430px;
+  }
+  &-text {
+    color: $color-dark-l;
+  }
 }

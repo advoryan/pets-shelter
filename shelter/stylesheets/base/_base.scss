@@ -1,14 +1,31 @@
+/**
+ * Set up a decent box model on the root element
+ */
 html {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    font-size: 10px;
-    color: white;
-    line-height: 10px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+h1,
+h2,
+h3,
+p,
+a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+a,
+.btn:hover {
+  cursor: url("../../assets/img/pointer-hover.png"), pointer;
 }
 
 body {
-    // display: flex;
-    // flex-wrap: wrap;
-    // flex-direction: row;
-    // cursor: url("../../assets/img/pointer-normal.png"), pointer;
+  cursor: url("../../assets/img/pointer-normal.png"), pointer;
 }

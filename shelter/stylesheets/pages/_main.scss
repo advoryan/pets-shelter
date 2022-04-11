@@ -1,13 +1,47 @@
 .header {
-    width: 100%;
-    &__container {
-        margin: 0 auto;
-        max-width: 1280px;
+  &__inner {
+    position: relative;
+  }
+  &__content {
+    top: 60px;
+    position: absolute;
+  }
+}
+.logo {
+  &__title {
+    color: $color-primary;
+  }
+  &__subtitle {
+    color: $color-light-xl;
+  }
+}
+.nav {
+  &__link {
+    color: $color-dark-s;
+    &:hover {
+      color: $color-light-s;
     }
+  }
+  &__active {
+    z-index: 100;
+    color: $color-light-s;
+  }
 }
-.brown-bg {
-    background: $start-screen-gradient-background;
-    background: url(../../assets/images/png/noise_transparent@2x.png),
-    linear-gradient(to right, #5b483a, #262425);
+.slider {
+  &__content {
+    width: 100%;
+  }
+  &__items {
+    gap: 90px;
+  }
 }
-
+.friends {
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100%);
+    position: absolute;
+    top: 44%;
+    left: 0;
+  }
+}

@@ -1,21 +1,28 @@
 .nav {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  &__list {
+    list-style: none;
     display: flex;
-    &__list {
-        display: flex;
-        align-items: center;
-        gap: 0 3.6rem;
-        margin-bottom: 8px;
-        padding: 20px 0;
-    }
-    &__link {
-        display: flex;
-        align-items: center;
-        @include font(arial, 1.5rem, 1rem);
-        color: $color-light-s;
-    }
-}
-
-.nav__active {
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 36px;
+    margin: 0;
+    padding-bottom: 5px;
+  }
+  &__item {
+    @include reset;
+  }
+  &__link {
+    @include font(arial, 1.5rem, 3rem);
+    text-decoration: none;
+    transition: 0.3s;
+    // padding-top: 5px;
+    padding-bottom: 3px;
+  }
+  &__active {
     border-bottom: solid 3px $color-primary;
-    line-height: 2rem;
+  }
 }

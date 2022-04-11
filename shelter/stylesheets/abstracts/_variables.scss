@@ -1,26 +1,19 @@
-$font-header: georgia;
-$font-paragraph: arial;
+$max-width: 1280px !default;
 
-$color-primary: #F1CDB3;
-$color-primary-light: #FDDCC4;
-$color-light-xl: #FFFFFF;
-$color-light-l: #F6F6F6;
-$color-light-s: #FAFAFA;
-$color-dark-s: #CDCDCD;
-$color-dark-m: #B2B2B2;
+$breakpoints: (
+  "small": 320px,
+  "medium": 768px,
+  "large": 1024px,
+) !default;
+
+/// color
+$color-primary: #f1cdb3;
+$color-primary-light: #fddcc4;
+$color-light-xl: #ffffff;
+$color-light-s: #fafafa;
 $color-dark-l: #545454;
-$color-dark-xl: #4C4C4C;
-$color-dark-2xl: #444444;
+$color-dark-m: #b2b2b2;
+$color-dark-s: #cdcdcd;
 $color-dark-3xl: #292929;
+$color-light-l: #f6f6f6;
 $color-hover: #fddcc4;
-
-$start-screen-gradient-background: 
-    url(../../assets/images/png/noise_transparent@2x.png),
-    radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
-    #211F20;
-
-    // linear-gradient(to right, #5B483A, #211F20);
-$footer-gradient-background: 
-    url(../../assets/images/png/noise_transparent@2x.png), 
-    radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),
-    #211F20;

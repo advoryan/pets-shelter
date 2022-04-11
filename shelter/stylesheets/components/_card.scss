@@ -1,0 +1,20 @@
+.card {
+  @include flexible;
+  flex-direction: column;
+  background-color: $color-light-s;
+  gap: 30px;
+  border-radius: 9px;
+  &__img {
+    border-radius: 9px 9px 0 0;
+  }
+
+  &__name {
+    @include font(georgia, 2rem, 2.3rem);
+    letter-spacing: 0.06em;
+    color: $color-dark-l;
+  }
+  &__btn {
+    margin-bottom: 30px;
+    color: $color-dark-3xl;
+  }
+}
