@@ -305,9 +305,11 @@ a,
   top: 50%;
   transition: 0.5s;
   cursor: pointer; }
+
   .btn-slider:hover {
     background-color: #fddcc4;
-    border: #fddcc4; }
+    border: #fddcc4;
+    cursor: url("../../assets/img/pointer-hover.png"), pointer; }
 
 .btn-credit {
   display: flex;
@@ -541,4 +543,5 @@ a,
 .btn__active {
   background-color: #fddcc4;
   border: none;
-  cursor: none; }
+  /* cursor: url("../../assets/img/pointer-hover.png"), pointer; */
+ } 
