@@ -174,7 +174,9 @@ a {
   margin: 0;
   padding: 0;
   border: 0; }
-
+.btn--background {
+  background: transparent;
+}
 a,
 .btn:hover {
   cursor: url("../../assets/img/pointer-hover.png"), pointer; }
