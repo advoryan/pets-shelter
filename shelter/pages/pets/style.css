@@ -350,10 +350,10 @@ a,
   .logo__subtitle {
     font-family: arial;
     font-size: 1.3rem;
-    line-height: 1.5rem;
+    line-height: 1.495rem;
     font-weight: 400;
     letter-spacing: 0.1em;
-    padding-top: 9px; }
+    padding-top: 10px; }
 
 .nav {
   margin-left: auto;
@@ -391,10 +391,12 @@ a,
     flex-wrap: wrap;
     border-radius: 9px; }
   .slider__card:hover {
-    cursor: url("../../assets/img/pointer-hover.png"), pointer; }
-  .slider__card:hover > button {
+    cursor: url("../../assets/img/pointer-hover.png"), pointer; 
+    background-color: #FFFFFF;
+  }
+  /* .slider__card:hover > button {
     background-color: #fddcc4;
-    border: #fddcc4; }
+    border: #fddcc4; } */
   .slider__card:hover > img {
     filter: drop-shadow(0 2px 35px rgba(13, 13, 13, 0.04)); }
 
