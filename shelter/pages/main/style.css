@@ -560,12 +560,12 @@ body {
   .slider__card:hover {
     cursor: url("../../assets/img/pointer-hover.png"), pointer; 
     background-color: #fff;}
-  /* .slider__card:hover > button {
-    background-color: #fddcc4;
-    border: #fddcc4; } */
-  .slider__card button:hover {
+  .slider__card:hover > button {
     background-color: #fddcc4;
     border: #fddcc4; }
+  /* .slider__card button:hover {
+    background-color: #fddcc4;
+    border: #fddcc4; } */
   .slider__card:hover > img {
     /* filter: drop-shadow(0 2px 35px rgba(13, 13, 13, 0.04));  */
   }
