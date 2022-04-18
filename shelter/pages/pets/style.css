@@ -685,8 +685,9 @@ a,
 
   @media (max-width: 767px) {
     .friends__container {
-      padding-top: 161px;
+      padding-top: 162px;
       padding-bottom: 41px;
+      gap: 41px;
     }
     .friends__title {
       text-align: center;
@@ -703,7 +704,7 @@ a,
       display:none;
     }
     .friends__btns {
-      margin-top: -20px;
+      margin-top: -13px;
       gap: 10px;
     }
     .card {
