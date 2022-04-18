@@ -623,7 +623,8 @@ body {
   .start__img img {
     margin-left: auto;
     margin-right: auto;
-    padding-left: 35px;
+    margin-top: 105px;
+    padding-left: 40px;
     width: 94vw;
   }
 }
@@ -961,7 +962,9 @@ body {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-row-gap: 29px;
-      grid-column-gap: 44px;
+      /* grid-column-gap: 44px; */
+      grid-column-gap: calc(100vw/320*44);
+      /* grid-column-gap: 1px; */
     }
     .icon__text {
       font-size: 15px;

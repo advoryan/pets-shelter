@@ -813,6 +813,7 @@ a,
   .inner_container {
     display: flex;
     justify-content: center;
+    margin-left: 4px;
   }
   .footer__contact {
     margin-right: 40px; 
