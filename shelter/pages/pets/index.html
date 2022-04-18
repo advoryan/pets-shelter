@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../assets/favicon.ico">
     <link rel="stylesheet" href="style.css">
-    <title>Shelter pets</title>
+    <title>Pets page</title>
   </head>
   <body>
     <header class="header">
@@ -17,6 +17,20 @@
               <h1 class="logo__title">Cozy House</h1>
               <p class="logo__subtitle">Shelter for pets in Boston</p>
             </a>
+
+            <div class="menu-container">
+              <div class="toggle-menu" href="#">
+                  <img class="toggle-menu-icon" src="../../assets/icons/burger_black.svg" alt="#">
+              </div>
+              <div class="menu-drawer">
+                  <div class="blackout"></div>
+                  <a class="nav-link nav__active" href="#">About the shelter</a>
+                  <a class="nav-link" href="../pets/index.html">Our pets</a>
+                  <a class="nav-link" href="#help">Help the shelter</a>
+                  <a class="nav-link" href="#contact">Contacts</a>
+              </div>
+            </div>
+
             <nav class="nav header__nav">
                 <ul class="nav__list">
                     <li class="nav__item">
@@ -43,6 +57,7 @@
         </div>
       </div>
     </header>
+
     <main>
       <section class="friends section-theme" id="friends">
         <div class="container friends__container">
@@ -130,44 +145,62 @@
         </div>
       </section>
     </main>
+
     <footer class="footer dark-theme" id="footer">
       <div class="container footer__container">
-        <div class="footer__contact">
-          <h2 class="section-title footer__title">
-            For questions and suggestions
-          </h2>
-          <div class="contact">
-            <div class="contact__list">
-                <a class="contact__link" href="mailto:email@shelter.com">
-                    email@shelter.com
-                <span class="contact__item contact__email"></span>
+        
+        <div class="inner_container">
+          
+          <div class="footer__contact">
+            <h2 class="section-title footer__title">
+              For questions and suggestions
+            </h2>
+            <div class="contact">
+              <div class="contact__list">
+                <a class="contact__link" href="mailto:email@shelter.com"
+                  >email@shelter.com
+                  <span class="contact__item contact__email"></span>
                 </a>
-                <a class="contact__link" href="tel:+136745677554">
-                    +13 674 567 75 54
-                <span class="contact__item contact__tel"></span>
-              </a>
+                <a class="contact__link" href="tel:+136745677554"
+                  >+13 674 567 75 54
+                  <span class="contact__item contact__tel"></span>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="footer-location">
-          <h2 class="section-title footer__title">
-            We are waiting for your visit
-          </h2>
-          <div class="location">
-            <div class="location__list">
-                <a class="location__link" href="https://goo.gl/maps/VPFToRkwSzVwh2tWA" target="_blank">
+
+          <div class="footer__location">
+            <h2 class="section-title footer__title">
+              We are waiting for your visit
+            </h2>
+            <div class="location">
+              <div class="location__list">
+                <a class="location__link"
+                  href="https://goo.gl/maps/VPFToRkwSzVwh2tWA"
+                  target="_blank">
                     1 Central Street, Boston (entrance from the store)
-                    <span class="location__item location__marker"></span>
+                  <span class="location__item location__marker"></span>
                 </a>
-                <a class="location__link" href="https://goo.gl/maps/VPFToRkwSzVwh2tWA" target="_blank">
+                <a class="location__link"
+                  href="https://goo.gl/maps/VPFToRkwSzVwh2tWA"
+                  target="_blank">
                     18 South Park, London
-                    <span class="location__item location__marker"></span>
+                  <span class="location__item location__marker"></span>
                 </a>
+              </div>
             </div>
           </div>
+
         </div>
-        <img src="../../assets/img/footer-puppy.png" alt="">
+
+        <div class="footer-dog">
+          <img class="footer-dog__img" src="../../assets/img/footer-puppy.png" alt="">
+        </div>
+
       </div>
     </footer>
+
+    <script src="./script.js"></script>
+
   </body>
 </html>

@@ -6,23 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="../../assets/favicon.ico" />
-    <title>Shelter main</title>
+    <title>Main page</title>
   </head>
   <body class="body">
     <header class="header dark-theme">
       <div class="container header__container">
         <div class="header__inner">
           <div class="header__content">
+
             <a href="#" class="logo">
               <h1 class="logo__title">Cozy House</h1>
               <p class="logo__subtitle">Shelter for pets in Boston</p>
             </a>
+
+            <div class="menu-container">
+              <div class="toggle-menu" href="#">
+                  <img class="toggle-menu-icon" src="../../assets/icons/burger.svg" alt="#">
+              </div>
+              <div class="menu-drawer">
+                  <div class="blackout"></div>
+                  <a class="nav-link nav__active" href="#">About the shelter</a>
+                  <a class="nav-link" href="../pets/index.html">Our pets</a>
+                  <a class="nav-link" href="#help">Help the shelter</a>
+                  <a class="nav-link" href="#contact">Contacts</a>
+              </div>
+            </div>
+
             <nav class="nav header__nav">
               <ul class="nav__list">
                 <li class="nav__item">
-                  <a class="nav__link nav__active" href="#"
-                    >About the shelter</a
-                  >
+                  <a class="nav__link nav__active" href="#">
+                    About the shelter
+                  </a>
                 </li>
                 <li class="nav__item">
                   <a class="nav__link" href="../pets/index.html">Our pets</a>
@@ -35,16 +50,19 @@
                 </li>
               </ul>
             </nav>
+            
           </div>
         </div>
       </div>
     </header>
+
     <main class="main">
       <section class="start dark-theme">
         <div class="container start__container">
+
           <div class="start__content start__start-content">
             <h2 class="start-title start__start-title">
-              Not only people need a house
+              Not only people <br/> need a house
             </h2>
             <p class="section-text start-text">
               We offer to give a chance to a little and nice puppy with an
@@ -55,18 +73,20 @@
               <button class="btn btn--start">Make a friend</button>
             </form>
           </div>
+
           <div class="start__img">
-            <img
-              src="../../assets/img/start-screen-puppy.png"
+            <img src="../../assets/img/start-screen-puppy.png"
               alt="start-screen"
-              width="698"
-              height="728"
-            />
-          </div>
+              max-width="698"
+              max-height="728"/>
+            </div>
+          
         </div>
       </section>
+
       <section class="about">
         <div class="container about__container">
+
           <div class="about-content">
             <h2 class="section-title about-title">
               About the shelter <br />“Cozy House”
@@ -86,23 +106,34 @@
               the pets and would hardly ever leave them alone.
             </p>
           </div>
+
           <div class="about__img">
-            <img
-              src="../../assets/img/about-pets.jpg"
+            <img src="../../assets/img/about-pets.jpg"
               alt="about-pets"
-              width="300"
-              height="408"
-            />
+              max-width="300"
+              max-height="408"/>
           </div>
+
         </div>
       </section>
+      
       <section class="friends section-theme" id="friends">
         <div class="container friends__container">
+          
           <h2 class="section-title friends__title">
             Our friends who <br />are looking for a house
           </h2>
+          
           <div class="slider friends__slider">
+
             <div class="slider__content">
+
+              <div class="friends__btns">
+                <button class="btn-slider slider__btn btn-slider--left">
+                  <span>&#129044;</span>
+                </button>
+              </div>
+
               <div class="slider__items">
 
                 <div class="slider__item">
@@ -130,82 +161,104 @@
                 </div>
 
               </div>
+              
+              <div class="friends__btns">
+                <button class="btn-slider slider__btn btn-slider--right">
+                  <span>&#129046;</span>  
+                </button>
+              </div>
+              
             </div>
-            <div class="friends__btns">
-              <button class="btn-slider slider__btn btn-slider--left">
-                &#129044;
-              </button>
-              <button class="btn-slider slider__btn btn-slider--right">
-                &#129046;
-              </button>
-            </div>
+
           </div>
+
           <a href="../../pages/pets/index.html"><button class="btn btn--friends">Get to know the rest</button></a>
+        
         </div>
       </section>
+      
       <section class="help" id="help">
         <div class="container help__container">
+
           <h2 class="section-title help__title">
             How you can help our shelter
           </h2>
+
           <div class="icon help__icon">
-            <div class="icon__list icon--font">
-              <div class="icon__item">
-                <span class="icon__img icon__img-1"></span>
-                <p class="icon__text">Pet food</p>
-              </div>
-              <div class="icon__item">
-                <span class="icon__img icon__img-2"></span>
-                <p class="icon__text">Transportation</p>
-              </div>
-              <div class="icon__item">
-                <span class="icon__img icon__img-3"></span>
-                <p class="icon__text">Toys</p>
-              </div>
-              <div class="icon__item">
-                <span class="icon__img icon__img-4"></span>
-                <p class="icon__text">Bowls and cups</p>
-              </div>
-              <div class="icon__item">
-                <span class="icon__img icon__img-5"></span>
-                <p class="icon__text">Shampoos</p>
-              </div>
-              <div class="icon__item">
-                <span class="icon__img icon__img-6"></span>
-                <p class="icon__text">Vitamins</p>
-              </div>
-              <div class="icon__item">
-                <span class="icon__img icon__img-7"></span>
-                <p class="icon__text">Medicines</p>
-              </div>
-              <div class="icon__item">
-                <span class="icon__img icon__img-8"></span>
-                <p class="icon__text">Collars / leashes</p>
-              </div>
-              <div class="icon__item">
-                <span class="icon__img icon__img-9"></span>
-                <p class="icon__text">Sleeping areas</p>
-              </div>
+
+            <div class="icon__list">
+
+                <div class="icon__item">
+                  <span class="icon__img icon__img-1"></span>
+                  <p class="icon__text">Pet food</p>
+                </div>
+
+                <div class="icon__item">
+                  <span class="icon__img icon__img-2"></span>
+                  <p class="icon__text">Transportation</p>
+                </div>
+
+                <div class="icon__item">
+                  <span class="icon__img icon__img-3"></span>
+                  <p class="icon__text">Toys</p>
+                </div>
+
+                <div class="icon__item">
+                  <span class="icon__img icon__img-4"></span>
+                  <p class="icon__text">Bowls and cups</p>
+                </div>
+
+                <div class="icon__item">
+                  <span class="icon__img icon__img-5"></span>
+                  <p class="icon__text">Shampoos</p>
+                </div>
+
+                <div class="icon__item">
+                  <span class="icon__img icon__img-6"></span>
+                  <p class="icon__text">Vitamins</p>
+                </div>
+
+                <div class="icon__item">
+                  <span class="icon__img icon__img-7"></span>
+                  <p class="icon__text">Medicines</p>
+                </div>
+
+                <div class="icon__item">
+                  <span class="icon__img icon__img-8"></span>
+                  <p class="icon__text">Collars / leashes</p>
+                </div>
+
+                <div class="icon__item">
+                  <span class="icon__img icon__img-9"></span>
+                  <p class="icon__text">Sleeping areas</p>
+                </div>
+
             </div>
+
           </div>
         </div>
       </section>
+
       <section class="donation section-theme">
         <div class="container donation__container">
+
           <div class="donation__content">
             <h2 class="section-title donation__title">
-              You can also <br />
+              You can also <br/>
               make a donation
             </h2>
+
             <p class="donation__subtitle">
               Name of the bank / Type of bank account
             </p>
+
             <div class="donation__btn-credit">
               <a href="#" class="btn-credit">
                 <span class="btn-credit__img"></span>
                 <span class="btn-credit__body">8380 2880 8028 8791 7435</span>
               </a>
             </div>
+
             <p class="donation__text">
               Legal information and lorem ipsum dolor sit amet, consectetur
               adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed
@@ -213,62 +266,73 @@
               et malesuada fames ac ante ipsum primis in faucibus.
             </p>
           </div>
+
           <div class="donation__img">
-            <img
-              src="../../assets/img/donation-dog.png"
+            <img src="../../assets/img/donation-dog.png"
               alt="donation-dog"
-              width="505"
-              height="261"
-            />
+              max-width="505"
+              max-height="261"/>
           </div>
+
         </div>
       </section>
     </main>
     
     <footer class="footer dark-theme" id="footer">
       <div class="container footer__container">
-        <div class="footer__contact">
-          <h2 class="section-title footer__title">
-            For questions and suggestions
-          </h2>
-          <div class="contact">
-            <div class="contact__list">
-              <a class="contact__link" href="mailto:email@shelter.com"
-                >email@shelter.com
-                <span class="contact__item contact__email"></span>
-              </a>
-              <a class="contact__link" href="tel:+136745677554"
-                >+13 674 567 75 54
-                <span class="contact__item contact__tel"></span>
-              </a>
+        
+        <div class="inner_container">
+          
+          <div class="footer__contact">
+            <h2 class="section-title footer__title">
+              For questions and suggestions
+            </h2>
+            <div class="contact">
+              <div class="contact__list">
+                <a class="contact__link" href="mailto:email@shelter.com"
+                  >email@shelter.com
+                  <span class="contact__item contact__email"></span>
+                </a>
+                <a class="contact__link" href="tel:+136745677554"
+                  >+13 674 567 75 54
+                  <span class="contact__item contact__tel"></span>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="footer-location">
-          <h2 class="section-title footer__title">
-            We are waiting for your visit
-          </h2>
-          <div class="location">
-            <div class="location__list">
-              <a
-                class="location__link"
-                href="https://goo.gl/maps/VPFToRkwSzVwh2tWA"
-                target="_blank"
-                >1 Central Street, Boston (entrance from the store)
-                <span class="location__item location__marker"></span
-              ></a>
-              <a
-                class="location__link"
-                href="https://goo.gl/maps/VPFToRkwSzVwh2tWA"
-                target="_blank"
-                >18 South Park, London
-                <span class="location__item location__marker"></span>
-              </a>
+
+          <div class="footer__location">
+            <h2 class="section-title footer__title">
+              We are waiting for your visit
+            </h2>
+            <div class="location">
+              <div class="location__list">
+                <a class="location__link"
+                  href="https://goo.gl/maps/VPFToRkwSzVwh2tWA"
+                  target="_blank">
+                    1 Central Street, Boston (entrance from the store)
+                  <span class="location__item location__marker"></span>
+                </a>
+                <a class="location__link"
+                  href="https://goo.gl/maps/VPFToRkwSzVwh2tWA"
+                  target="_blank">
+                    18 South Park, London
+                  <span class="location__item location__marker"></span>
+                </a>
+              </div>
             </div>
           </div>
+
         </div>
-        <img src="../../assets/img/footer-puppy.png" alt="">
+
+        <div class="footer-dog">
+          <img class="footer-dog__img" src="../../assets/img/footer-puppy.png" alt="">
+        </div>
+
       </div>
     </footer>
+
+    <script src="./script.js"></script>
+
   </body>
 </html>
