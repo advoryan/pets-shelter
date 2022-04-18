@@ -665,6 +665,10 @@ body {
       padding-top: 70px;
       gap: 75px;
     }
+    .about-content {
+      gap: 23px;
+      padding-bottom: 5px;
+    }
     .about__img {
       display: flex;
       justify-content: center; 
@@ -681,6 +685,7 @@ body {
     }
     .about-content {
       gap: 23px;
+  
     }
     .about-title {
       text-align: center;
@@ -934,7 +939,7 @@ body {
       row-gap: 55px;
     }
     .icon__item {
-      flex: 1 1 50px;
+      flex: 1 1 20%;
     }
   }
   @media (max-width: 767px) {

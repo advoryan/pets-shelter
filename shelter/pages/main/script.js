@@ -17,5 +17,6 @@ drawerLinks.forEach(item => {
     item.addEventListener('click', () => {
         menuIcon.classList.toggle("active");
         menuDrawer.classList.toggle("open");
+        blackout.classList.remove("open");
     })
 })
