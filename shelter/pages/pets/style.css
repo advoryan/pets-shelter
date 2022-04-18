@@ -1,3 +1,10 @@
+:root {
+  --primary-color: #F1CDB3;
+  --animation: all 0.3s ease-out;
+  --cursor-pointer: url("../../assets/img/pointer-hover.png"), auto;
+  --cursor-default: url("../../assets/img/pointer-normal.png"), pointer; 
+}
+
 .btn, .btn-slider, .slider__card:hover > img, .contact__link {
   transition: all .5s ease-out; 
 }
@@ -320,7 +327,6 @@ a,
       justify-content: center;
       float: right;
   }
-
   .toggle-menu-icon:hover {
       cursor: var(--cursor-pointer);
       transition: var(--animation);
@@ -896,7 +902,6 @@ a,
       padding-top: 37px; 
       justify-content: flex-start;
       align-items: center;
-      outline: 1px solid red;
     }
     .location__list {
       align-items:flex-start;
@@ -922,8 +927,6 @@ a,
     .footer-dog {
       display:flex;
       justify-content: center;
-      outline: 1px solid red;
-      /* height: 96.5vw; */
     }
     .footer-dog__img {
       display:inline;
@@ -931,7 +934,6 @@ a,
       height: inherit;
       height: 96.5vw;
       max-height: 435px;
-      outline: 1px solid red;
       margin: auto 10px 0px 10px;
     }
   }

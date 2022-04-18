@@ -532,7 +532,6 @@ body {
     flex-direction: column;
     gap: 42px;
     max-width: 460px;
-    outline: solid 1px red;
   }
   .start__content > form {
     padding-bottom: 40px; 
@@ -547,12 +546,10 @@ body {
   height: 100%;
   max-width: 698px;
   width: 100%;
-  /* outline: solid 1px rgb(76, 0, 255);  */
 }
   .start__img img {
     margin-top: 100px;
     display: block;
-    /* outline: solid 1px red; */
     width: 100%;
     height: auto; }
     
@@ -642,11 +639,9 @@ body {
   padding-top: 80px;
   gap: 120px;
   padding-bottom: 100px; 
-  outline: 1px solid rgb(153, 51, 51);
 }
 .about__img img {
   display: block; 
-  /* outline: 1px solid rebeccapurple; */
 }                
 .about-title {
   color: #545454;
@@ -657,7 +652,6 @@ body {
   flex-direction: column;
   gap: 25px;
   max-width: 430px;
-  /* outline: 1px solid rgb(153, 51, 51);  */
 }
 
 .about-text {
@@ -668,7 +662,6 @@ body {
       flex-direction: column;
       justify-content: center;
       align-content: center;
-      /* outline: 1px solid rebeccapurple; */
       padding-top: 70px;
       gap: 75px;
     }
@@ -742,12 +735,10 @@ body {
     gap: 90px;
     justify-content: center; 
     max-height: 435px;
-    outline: 1px solid rebeccapurple;
   }
   .slider__item {
     display: flex;
     justify-content: center;
-    outline: 1px solid rebeccapurple;
   }
   
   @media (min-width: 768px) and (max-width: 1279px) {
@@ -832,7 +823,6 @@ body {
 
 .card {
   max-width: 270px;
-  outline: 1px solid red;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -937,7 +927,6 @@ body {
       max-width: 86%;
     }
     .icon__list {
-      outline: 1px solid red;
       row-gap: 0px;
       column-gap: 78px;
       justify-content: space-between;
@@ -962,24 +951,12 @@ body {
       font-weight: 400;
       padding: 20px;
     }
-    /* .icon__list {
-      outline: 1px solid red;
-      column-gap: 60px;
-      column-gap: 0px;
-      justify-content: flex-start;
-      row-gap: 30px;
-    } */
     .icon__list {
       padding: 0 5px 0 15px;
-      outline: 1px solid red;
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-row-gap: 29px;
       grid-column-gap: 44px;
-    }
-    .icon__item {
-      /* flex: 1 1 30px; */
-  
     }
     .icon__text {
       font-size: 15px;
@@ -1218,7 +1195,6 @@ body {
       padding-top: 37px; 
       justify-content: flex-start;
       align-items: center;
-      outline: 1px solid red;
     }
     .location__list {
       align-items:flex-start;
@@ -1244,8 +1220,6 @@ body {
     .footer-dog {
       display:flex;
       justify-content: center;
-      outline: 1px solid red;
-      /* height: 96.5vw; */
     }
     .footer-dog__img {
       display:inline;
@@ -1253,7 +1227,6 @@ body {
       height: inherit;
       height: 96.5vw;
       max-height: 435px;
-      outline: 1px solid red;
       margin: auto 10px 0px 10px;
     }
   }
