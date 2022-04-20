@@ -1024,12 +1024,16 @@ body {
   .donation__text {
     padding-bottom: 30px;
   }
+    .donation__container {
+      max-width: 443px;
+    }
 }
 @media (max-width: 767px) {
   .donation__container {
     padding-top: 0px;
     gap:0;
     padding-bottom: 43.62px;
+    max-width: 320px;
   }
   .donation__title {
     text-align: center;

@@ -509,7 +509,8 @@ a,
   .slider__items {
     display: flex;
     flex-wrap: wrap;
-    border-radius: 9px; }
+    /* border-radius: 9px; */
+   }
   .slider__card:hover {
     cursor: url("../../assets/img/pointer-hover.png"), pointer; 
     background-color: #fff;}
@@ -681,7 +682,7 @@ a,
     }
     .slider__item {
       flex: 0 0 50%;
-      display:flex;
+      display: flex;
       justify-content: center;
     }
     .slider__item:nth-child(n+7) {
