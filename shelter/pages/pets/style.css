@@ -350,7 +350,7 @@ a,
       position: fixed;
       right: -1550px;
       top: -30px;
-      transition: var(--animation);
+      /* transition: var(--animation); */
       padding: 39px;
       display: flex;
       justify-content: center;
@@ -358,17 +358,23 @@ a,
       gap: 40px;
       flex-direction: column;
       z-index: 1000;
+      transition: all 0.4s ease-out;
+  }
+  .noScroll-active { 
+    overflow:  hidden; 
   }
   .blackout {
+    top:-0px;
     position: fixed;
-    height: 1000%;
+    height: 100%;
     width: 1500px;
     background: rgba(41, 41, 41, 0.6);
     z-index: 0;
   }
   .open {
       right: 0px;
-      transition: var(--animation);
+      /* transition: var(--animation); */
+      transition: all 0.4s ease-out;
       position: fixed;
   }
   .nav-link {
