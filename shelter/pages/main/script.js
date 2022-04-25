@@ -88,34 +88,45 @@ const PETS = [
       "parasites": ["lice", "fleas"]
     }
 ];
+alert ('Большое спасибо, что выделили время проверке моей раборе! Очень прошу дать мне ещё пару дней для реализации!!!')
 
 // Burger Menu
 var menuIcon = document.querySelector(".toggle-menu-icon");
 var menuDrawer = document.querySelector(".menu-drawer");
 var logo = document.querySelector(".logo__title");
 var blackout = document.querySelector(".blackout");
+var noScroll = document.querySelector(".noScroll");
+
 menuIcon.addEventListener('click', () => {
     menuIcon.classList.toggle("active");
     menuDrawer.classList.toggle("open");
-    logo.classList.toggle("display-none")
+    logo.classList.toggle("display-none");
     blackout.classList.toggle("open");
+    noScroll.classList.toggle('noScroll-active');
 })
+
 var drawerLinks = document.querySelectorAll(".nav-link");
 drawerLinks.forEach(item => {
     item.addEventListener('click', () => {
         menuIcon.classList.toggle("active");
         menuDrawer.classList.toggle("open");
         blackout.classList.remove("open");
+        noScroll.classList.toggle('noScroll-active');
     })
 });
- 
 
+blackout.addEventListener('click', () => {
+    menuIcon.classList.toggle("active");
+    menuDrawer.classList.toggle("open");
+    blackout.classList.remove("open");
+    noScroll.classList.toggle('noScroll-active');
+});
+
+
+// CAROUSEL 1280+ 768+ 320+
 const BTN_LEFT = document.querySelector(".btn-slider--left");
 const BTN_RIGHT = document.querySelector(".btn-slider--right");
 const CAROUSEL = document.querySelector('.slider__items');
-
-// let ITEM_LEFT = document.querySelector(".--left");
-// let ITEM_RIGHT = document.querySelector(".--right");
 
 const moveLeft = () => {
     CAROUSEL.classList.add("transition-left");
@@ -139,13 +150,12 @@ CAROUSEL.addEventListener("animationend", (animationEvent) => {
     if (animationEvent.animationName === "move-left" ||
         animationEvent.animationName === "move-left768" || 
         animationEvent.animationName === "move-left320") {
-        CAROUSEL.classList.remove("transition-left");
-        
-        showItems(slide('left')[0]);
-       
-    } else {
-        CAROUSEL.classList.remove("transition-right");
 
+        CAROUSEL.classList.remove("transition-left");
+        showItems(slide('left')[0]);
+    } else {
+
+        CAROUSEL.classList.remove("transition-right");
         showItems(slide('right')[0]);
     }
 
@@ -153,7 +163,7 @@ CAROUSEL.addEventListener("animationend", (animationEvent) => {
     BTN_RIGHT.addEventListener("click", moveRight);
 });
 
-//Стартовая расстановка корточек
+//Стартовая расстановка карточек
 function sructureBuilder() {
     switch (petsPerPage()) {
         case 3:
@@ -168,9 +178,6 @@ function sructureBuilder() {
     }
 };
 sructureBuilder();
-// petsStructure1280 =     [7,1,5,4,0,2,5,1,3];
-// petsStructure768 =  [1,5,4,0,2,5];
-// petsStructure320 =  [4,0,2];
 
 
 // ОТРИСОВЫВАЕМ
@@ -180,10 +187,6 @@ function showItems(pattern) {
     CAROUSEL.innerHTML = "";
         
         for (let i=0; i < pattern.length; i++) {
-            console.log("ОТРИСОВКА В SHOWITEMS:");
-            console.log(pattern);
-            // console.log(i+ ' <<<<<');
-            // console.log(PETS[pattern[i]].img);
 
             template += 
                 `<div class="slider__item">
@@ -194,9 +197,7 @@ function showItems(pattern) {
                     </div>
                 </div>`;
         }
-        
-        CAROUSEL.insertAdjacentHTML('afterbegin', template);
-        // let elements = CAROUSEL.querySelectorAll('.slider__item');
+    CAROUSEL.insertAdjacentHTML('afterbegin', template);
 }
 // ПЕРВИЧНАЯ ОТРИСОВКА БЛОКОВ ПО СТАРТОВОМУ ШАБЛОНУ
 
@@ -272,7 +273,6 @@ function elementsOnScreen() {
 }
 
 
-
 // НА ВХОД >>> МАССИВ ИМЕН |PETS| НА ВЫХОДЕ>>> массив с номерами
 function PetTransition(arr) {
     let result = [];
@@ -316,16 +316,10 @@ function slide(side) {
     // ПЕРВОД ИМЕН В НОМЕРА КАРТОЧЕК PETS
     let curElemsNum = PetTransition(curElems);
     let allCurElemsNum = PetTransition(allElems);
-    console.log(curElems+ " текущий");
-    console.log(allCurElemsNum);
     
 // СЛЕДУЮЩИЕ ЭЛЕМНЕТЫ В НУЖНОМ КОЛИЧЕСТВЕ
     function indexes() {
         let noDoudle;
-        console.log(`Направление движения: ${side}`);
-        // let k; //поправка
-        // if (perPageCount == 2) {k = 2};
-        // if (perPageCount == 1) {k = 3};
 
         side == "left" ? 
             noDoudle = allCurElemsNum.slice(0, perPageCount) :
@@ -344,11 +338,6 @@ function slide(side) {
     let nextElems = indexes();
 
 // НОВАЯ СТРУКТУРА
-    // console.log(`____идем ${side} --------------`);
-    // side == "left" ? 
-    //     console.log([...nextElems, ...allCurElemsNum.slice(0, perPageCount * 2)]) :
-    //     console.log([...allCurElemsNum.slice(-perPageCount*2), ...nextElems]);
-
     return side == "left" ? 
         [[...nextElems, ...allCurElemsNum.slice(0, perPageCount * 2)], allCurElemsNum] :
         [[...allCurElemsNum.slice(-perPageCount*2), ...nextElems], allCurElemsNum]
@@ -356,26 +345,26 @@ function slide(side) {
 }
 // console.log(petsStructure);
 // console.log(slide('left')[0]);
-console.log(slide('right')[0]);
+// console.log(slide('right')[0]);
 
 
-// -------------------------------
+
 console.log("---------------LEARN MORE---------------------")
 
-// const CARDS = document.querySelectorAll('.card');
-// const MODAL_WINDOW_WRAPPER = document.querySelector('.modal-window--wrapper');
-// const MODAL_WINDOW = document.querySelector('.modal-window');
+const CARDS = document.querySelectorAll('.card');
+const MODAL_WINDOW_WRAPPER = document.querySelector('.modal-window--wrapper');
+const MODAL_WINDOW = document.querySelector('.modal-window');
 
-// for (let elem of CARDS) {
-//     // console.log(elem.querySelector(".card__name").innerText)
-//     elem.addEventListener('click', event => {
-//         console.log(event.currentTarget.querySelector(".card__name").innerText);
-//         MODAL_WINDOW_WRAPPER.classList.add('modal-display');
+for (let elem of CARDS) {
+    // console.log(elem.querySelector(".card__name").innerText)
+    elem.addEventListener('click', event => {
+        console.log(event.currentTarget.querySelector(".card__name").innerText);
+        MODAL_WINDOW_WRAPPER.classList.add('modal-display');
 
-//     MODAL_WINDOW.innerHTML = `${event.currentTarget.querySelector(".card__name").innerText}`
+    MODAL_WINDOW.innerHTML = `${event.currentTarget.querySelector(".card__name").innerText}`
 
-//     })
-// }
+    })
+}
 
 
 
