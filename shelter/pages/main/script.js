@@ -114,8 +114,8 @@ const BTN_LEFT = document.querySelector(".btn-slider--left");
 const BTN_RIGHT = document.querySelector(".btn-slider--right");
 const CAROUSEL = document.querySelector('.slider__items');
 
-let ITEM_LEFT = document.querySelector(".--left");
-let ITEM_RIGHT = document.querySelector(".--right");
+// let ITEM_LEFT = document.querySelector(".--left");
+// let ITEM_RIGHT = document.querySelector(".--right");
 
 const moveLeft = () => {
     CAROUSEL.classList.add("transition-left");
@@ -123,11 +123,11 @@ const moveLeft = () => {
     BTN_RIGHT.removeEventListener("click", moveRight);
   };
   
-  const moveRight = () => {
+ const moveRight = () => {
     CAROUSEL.classList.add("transition-right");
     BTN_LEFT.removeEventListener("click", moveLeft);
     BTN_RIGHT.removeEventListener("click", moveRight);
-  };
+};
 
 /*-------------------------*/
 
@@ -135,12 +135,14 @@ BTN_LEFT.addEventListener("click", moveLeft);
 BTN_RIGHT.addEventListener("click", moveRight);
 
 CAROUSEL.addEventListener("animationend", (animationEvent) => {
-    let changedItem;
-    if (animationEvent.animationName === "move-left") {
+
+    if (animationEvent.animationName === "move-left" ||
+        animationEvent.animationName === "move-left768" || 
+        animationEvent.animationName === "move-left320") {
         CAROUSEL.classList.remove("transition-left");
         
         showItems(slide('left')[0]);
-        
+       
     } else {
         CAROUSEL.classList.remove("transition-right");
 
@@ -152,9 +154,23 @@ CAROUSEL.addEventListener("animationend", (animationEvent) => {
 });
 
 //Стартовая расстановка корточек
-petsStructure =     [7,1,5,4,0,2,5,1,3];
-petsStructure768 =  [1,5,4,0,2,5];
-petsStructure320 =  [4,0,2];
+function sructureBuilder() {
+    switch (petsPerPage()) {
+        case 3:
+            return petsStructure = [7,1,5,4,0,2,5,1,3];
+            break;
+        case 2:
+            return petsStructure = [1,5,4,0,2,5];
+            break;
+        case 1:
+            return petsStructure = [4,0,2];
+            break;
+    }
+};
+sructureBuilder();
+// petsStructure1280 =     [7,1,5,4,0,2,5,1,3];
+// petsStructure768 =  [1,5,4,0,2,5];
+// petsStructure320 =  [4,0,2];
 
 
 // ОТРИСОВЫВАЕМ
@@ -164,9 +180,10 @@ function showItems(pattern) {
     CAROUSEL.innerHTML = "";
         
         for (let i=0; i < pattern.length; i++) {
+            console.log("ОТРИСОВКА В SHOWITEMS:");
             console.log(pattern);
-            console.log(i+ ' <<<<<');
-            console.log(PETS[pattern[i]].img);
+            // console.log(i+ ' <<<<<');
+            // console.log(PETS[pattern[i]].img);
 
             template += 
                 `<div class="slider__item">
@@ -182,13 +199,13 @@ function showItems(pattern) {
         // let elements = CAROUSEL.querySelectorAll('.slider__item');
 }
 // ПЕРВИЧНАЯ ОТРИСОВКА БЛОКОВ ПО СТАРТОВОМУ ШАБЛОНУ
+
 showItems(petsStructure);
 
 
 // СЛУШАЕМ ИЗМНЕНИЕ ШИРИНы ОКНА LISTENER
 let currentBodySize = +document.body.scrollWidth;
 let bodySizeListener = +document.body.scrollWidth;
-
 
 window.onresize = function(event) {
     bodySizeListener = +document.body.scrollWidth;
@@ -200,20 +217,20 @@ window.onresize = function(event) {
         currentBodySize >= 768) {
             currentBodySize = bodyWidth;
             console.log(`320 resize reload ${bodyWidth} ${currentBodySize}`)
-            showItems(petsStructure320);
+            showItems(sructureBuilder());
     } else if (
         (bodyWidth < 1280 && bodyWidth >= 768) &&
         (currentBodySize >= 1280 || currentBodySize < 768) ) {
             currentBodySize = bodyWidth;
             console.log(`768 resize reload ${bodyWidth} ${currentBodySize}`)
-            showItems(petsStructure768);
+            showItems(sructureBuilder());
             
     } else if (
         bodyWidth >= 1280 &&
         currentBodySize < 1280) {
             currentBodySize = bodyWidth;
             console.log(`1280 resize reload ${bodyWidth} ${currentBodySize}`);
-            showItems(petsStructure);
+            showItems(sructureBuilder());
     }
 };
 
@@ -272,22 +289,23 @@ function PetTransition(arr) {
 
 
 function slide(side) {
-
+    console.log(`Направление движения в начале функции: ${side}`);
 // ОПРЕДЕЛЕНИЕ КОЛИЧЕСТВА НА ЭКРАНЕ
     let perPageCount = petsPerPage();
         console.log(`petsPerPage = ${perPageCount}`);
+        
     let petElems = CAROUSEL.querySelectorAll('.card__name');
     let curElems = []; 
     let allElems = [];
 
     // только на экране как имена
     for (let i=0; i < perPageCount; i++) {
-        console.log(i);
-        console.log(perPageCount + i -1);
-        console.log(petElems[i]);
+        // console.log(i);
+        // console.log(perPageCount + i -1);
+        // console.log(petElems[i]);
 
-        console.log(curElems.push(petElems[i].innerHTML));
-        console.log(curElems.push(petElems[perPageCount + i + (3 - perPageCount)].innerHTML));
+        // console.log(curElems.push(petElems[i].innerHTML));
+        // console.log(curElems.push(petElems[perPageCount + i + (3 - perPageCount)].innerHTML));
         
     }
     // все как имена
@@ -337,19 +355,27 @@ function slide(side) {
 
 }
 // console.log(petsStructure);
-// console.log(slide('left'));
-console.log(slide('right'));
+// console.log(slide('left')[0]);
+console.log(slide('right')[0]);
 
 
+// -------------------------------
+console.log("---------------LEARN MORE---------------------")
 
+// const CARDS = document.querySelectorAll('.card');
+// const MODAL_WINDOW_WRAPPER = document.querySelector('.modal-window--wrapper');
+// const MODAL_WINDOW = document.querySelector('.modal-window');
 
+// for (let elem of CARDS) {
+//     // console.log(elem.querySelector(".card__name").innerText)
+//     elem.addEventListener('click', event => {
+//         console.log(event.currentTarget.querySelector(".card__name").innerText);
+//         MODAL_WINDOW_WRAPPER.classList.add('modal-display');
 
+//     MODAL_WINDOW.innerHTML = `${event.currentTarget.querySelector(".card__name").innerText}`
 
-
-console.log(`768 ---- измененый           : ${slide("left")[1]
-    .slice(petsPerPage(),petsPerPage()*3)
-    .slice(-petsPerPage()*0)}`);
-
+//     })
+// }
 
 
 
