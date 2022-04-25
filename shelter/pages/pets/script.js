@@ -148,6 +148,13 @@ blackout.addEventListener('click', () => {
 let cardsCount = 48; // <--- УСЛОВНО-ПОСТОЯННАЯ
 let pageN = 1;
 
+const START_BTN = document.querySelector('.btn--start');
+const END_BTN = document.querySelector('.btn--end');
+const PREV_BTN = document.querySelector('.btn--prev');
+const NEXT_BTN = document.querySelector('.btn--next');
+const ACTIVE_PAGE = document.querySelector('.btn__active');
+const BUTTONS = document.querySelector('.friends__btns');
+
 // КОЛИЧЕСТВО КАРТОЧЕК НА СТРАНИЦЕ
 function cardsPerPage() {
     let bodyWidth = +document.body.scrollWidth;
@@ -199,17 +206,7 @@ function showItems(pageN) {
 showItems(pageN);
 
 
-
-// btn__disabled
-const START_BTN = document.querySelector('.btn--start');
-const END_BTN = document.querySelector('.btn--end');
-const PREV_BTN = document.querySelector('.btn--prev');
-const NEXT_BTN = document.querySelector('.btn--next');
-const ACTIVE_PAGE = document.querySelector('.btn__active');
-const BUTTONS = document.querySelector('.friends__btns');
-
-
-const check = () => {
+const disableButtons = () => {
     if (pageN === 1 ) {
         START_BTN.classList.add('btn__disabled');
         PREV_BTN.classList.add('btn__disabled');
@@ -224,13 +221,11 @@ const check = () => {
         NEXT_BTN.classList.remove('btn__disabled');
         END_BTN.classList.remove('btn__disabled');
     }
-
 }
 
-BUTTONS.addEventListener ('click', (event => {
-    
-    let pCount = pagesCount();
 
+BUTTONS.addEventListener ('click', (event => {
+ 
     //START
     if (event.target == START_BTN && !START_BTN.classList.contains('btn__disabled')) {
         pageN = 1;
@@ -249,16 +244,55 @@ BUTTONS.addEventListener ('click', (event => {
     };
     //END
     if (event.target == END_BTN && !END_BTN.classList.contains('btn__disabled')) {
-        pageN = pCount;
+        pageN = pagesCount();
         showItems(pageN);
         ACTIVE_PAGE.innerText = pageN;
     };
     
-    check();
+    disableButtons();
     
-        console.log("кол-во "+pCount);
+        console.log("кол-во "+pagesCount());
         console.log("текущая "+pageN);
 }));
+
+
+
+// СЛУШАЕМ ИЗМНЕНИЕ ШИРИНы ОКНА LISTENER
+let currentBodySize = +document.body.scrollWidth;
+let bodySizeListener = +document.body.scrollWidth;
+
+window.onresize = function(event) {
+    bodySizeListener = +document.body.scrollWidth;
+    console.log(bodySizeListener);
+
+    let bodyWidth = +document.body.scrollWidth;
+    if (
+        bodyWidth < 768 &&
+        currentBodySize >= 768) {
+            currentBodySize = bodyWidth;
+            console.log(`320 resize reload ${bodyWidth} ${currentBodySize}`)
+            showItems(1);
+            disableButtons();
+            ACTIVE_PAGE.innerText = '1';
+    } else if (
+        (bodyWidth < 1280 && bodyWidth >= 768) &&
+        (currentBodySize >= 1280 || currentBodySize < 768) ) {
+            currentBodySize = bodyWidth;
+            console.log(`768 resize reload ${bodyWidth} ${currentBodySize}`)
+            showItems(1);
+            disableButtons();
+            ACTIVE_PAGE.innerText = '1';
+    } else if (
+        bodyWidth >= 1280 &&
+        currentBodySize < 1280) {
+            currentBodySize = bodyWidth;
+            console.log(`1280 resize reload ${bodyWidth} ${currentBodySize}`);
+            showItems(1);
+            disableButtons();
+            ACTIVE_PAGE.innerText = '1';
+    }
+};
+
 
 
 
