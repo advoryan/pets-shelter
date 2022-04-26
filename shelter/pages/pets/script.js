@@ -157,15 +157,15 @@ const BUTTONS = document.querySelector('.friends__btns');
 
 // КОЛИЧЕСТВО КАРТОЧЕК НА СТРАНИЦЕ
 function cardsPerPage() {
-    let bodyWidth = +document.body.scrollWidth;
+    // let bodyWidth = +document.body.scrollWidth;
+    let bodyWidth = +window.innerWidth;
     let perPageCount;
         bodyWidth >=1280 ?  perPageCount = 8 : 
         bodyWidth >=768  ?  perPageCount = 6 :
                             perPageCount = 3 ;
         return perPageCount
-    }
-    
-    
+}
+
 // количество страниц
 const pagesCount = () => Math.ceil(cardsCount / cardsPerPage());
 
@@ -174,24 +174,23 @@ let items = [];
 for (let i = 0; i < (6); i++) {
     items.push(...PETS.sort(() => Math.random() - 0.5));
 };
-console.log(items);
+// console.log(items);
 
 // ОТРИСОВЫВАЕМ
 const WRAPPER = document.querySelector('.slider__items');
 
 function showItems(pageN) {
     let nPages = pagesCount();
-    console.log(nPages);
-    console.log(items.length / nPages);
+    console.log(nPages +" количество станиц");
+    console.log(items.length / nPages + " элементов на экране");
     let end = pageN * (items.length / nPages)-1;
-    let start = end+1 - items.length / nPages;
-    console.log(start + "-" + end);
+    let start = end + 1 - items.length / nPages;
+    console.log("от " + start + " до " + end + " элемента PETS");
 
     let template = '';
     WRAPPER.innerHTML = "";
         
         for (let i=start; i <= end; i++) {
-            console.log(items[i].img);
             template += 
                 `<div class="slider__item">
                     <div class="card slider__card">
@@ -258,43 +257,54 @@ BUTTONS.addEventListener ('click', (event => {
 
 
 // СЛУШАЕМ ИЗМНЕНИЕ ШИРИНы ОКНА LISTENER
-let currentBodySize = +document.body.scrollWidth;
-let bodySizeListener = +document.body.scrollWidth;
+let currentBodySize = +window.innerWidth;
+let bodySizeListener = +window.innerWidth;
+// let currentBodySize = +document.documentElement.clientWidth;
+// let bodySizeListener = +document.documentElement.clientWidth;
 
 window.onresize = function(event) {
-    bodySizeListener = +document.body.scrollWidth;
-    console.log(bodySizeListener);
+    // bodySizeListener = +window.innerWidth;
+    bodySizeListener = +window.innerWidth;
+    console.log(bodySizeListener +"dfggsdgdsgdsgfsdgfd");
 
-    let bodyWidth = +document.body.scrollWidth;
+    let bodyWidth = +window.innerWidth;
     if (
         bodyWidth < 768 &&
         currentBodySize >= 768) {
             currentBodySize = bodyWidth;
-            console.log(`320 resize reload ${bodyWidth} ${currentBodySize}`)
+            console.log(`320 resize reload ${bodyWidth} ${currentBodySize}`);
+            pageN = 1;
             showItems(1);
-            disableButtons();
             ACTIVE_PAGE.innerText = '1';
+            disableButtons();
     } else if (
         (bodyWidth < 1280 && bodyWidth >= 768) &&
         (currentBodySize >= 1280 || currentBodySize < 768) ) {
             currentBodySize = bodyWidth;
-            console.log(`768 resize reload ${bodyWidth} ${currentBodySize}`)
+            console.log(`768 resize reload ${bodyWidth} ${currentBodySize}`);
+            pageN = 1;
             showItems(1);
-            disableButtons();
             ACTIVE_PAGE.innerText = '1';
+            disableButtons();
+            // ACTIVE_PAGE.innerText = '1';
+            // ACTIVE_PAGE.click();
     } else if (
-        bodyWidth >= 1280 &&
-        currentBodySize < 1280) {
+        bodyWidth >= (1280) &&
+        currentBodySize < (1280)) {
             currentBodySize = bodyWidth;
             console.log(`1280 resize reload ${bodyWidth} ${currentBodySize}`);
+            // cardsPerPage();
+            pageN = 1;
             showItems(1);
-            disableButtons();
             ACTIVE_PAGE.innerText = '1';
+            disableButtons();
+            
+            // document.location.reload();
     }
 };
 
-showItems(1);
-ACTIVE_PAGE.innerText = '1';
+// showItems(1);
+// ACTIVE_PAGE.innerText = '1';
 
 
 
@@ -334,4 +344,4 @@ ACTIVE_PAGE.innerText = '1';
 // количество на странице !!!
 // var itemsPerPage = 5;
 // reference to keep track of current page
-var currentPage = 1;
+// var currentPage = 1;

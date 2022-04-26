@@ -683,6 +683,7 @@ a,
       justify-content: center;
       padding-left: 43px;
       padding-right: 43px;
+      /* outline: 1px dotted red; */
       /* row-gap: 30px; */
     }
     .card {
