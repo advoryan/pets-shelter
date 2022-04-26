@@ -293,7 +293,8 @@ window.onresize = function(event) {
     }
 };
 
-
+showItems(1);
+ACTIVE_PAGE.innerText = '1';
 
 
 
