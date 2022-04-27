@@ -1511,6 +1511,35 @@ align-items: center; }
   border-radius: 9px;
 }
 
+.modal__title{
+  font-size: 35px;
+  font-weight: 400;
+ 
+}
+.modal__breed{
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
+}
+
+.modal__list{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: end;
+  padding:0;
+
+}
+.modal__listitem {
+  padding-left: 5px;
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.modal__listitem b {
+  padding-right: 3px;
+}
+
 @media (max-width: 1279px) {
   .modal__window {
     gap: 10px;
