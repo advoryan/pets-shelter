@@ -355,21 +355,65 @@ function slide(side) {
 console.log("---------------LEARN MORE---------------------")
 
 const CARDS = document.querySelectorAll('.card');
-const MODAL_WINDOW_WRAPPER = document.querySelector('.modal-window--wrapper');
-const MODAL_WINDOW = document.querySelector('.modal-window');
+const CARD_BLACKOUT = document.querySelector('.cards-blackout');
+const MODAL_WINDOW_WRAPPER = document.querySelector('.modal--wrapper');
+const MODAL_WINDOW = document.querySelector('.modal');
+const MODAL_CLOSE = document.querySelector('.modal__close');
+
+const searchByName = (petName) => {
+    for (let pet of PETS) {
+        if (pet.name === petName) {
+            return pet
+        };
+    }
+}
+console.log(searchByName('Freddie'));
+
 
 for (let elem of CARDS) {
     // console.log(elem.querySelector(".card__name").innerText)
     elem.addEventListener('click', event => {
-        console.log(event.currentTarget.querySelector(".card__name").innerText);
-        MODAL_WINDOW_WRAPPER.classList.add('modal-display');
+        let name = event.currentTarget.querySelector(".card__name").innerText;
+        // console.log(name);
+        let pet = searchByName(name);
+        // console.log(pet);
+        MODAL_WINDOW_WRAPPER.classList.toggle('hide');
+        // MODAL_WINDOW.classList.add('show');
+        CARD_BLACKOUT.classList.toggle('hide');
+        noScroll.classList.toggle('noScroll-active');
 
-    MODAL_WINDOW.innerHTML = `${event.currentTarget.querySelector(".card__name").innerText}`
+    MODAL_WINDOW.innerHTML =`
+    <div class="modal__window">
+        <div class="modal__img">
+            <img src="${pet.img}" alt="${pet.name}"></div>
+            <div class="modal__text">
+                <h3 class="modal__title">${pet.name}</h3>
+                <h4 class="modal__breed">${pet.type} - ${pet.breed}</h4>
+                <div class="modal__description">${pet.description}</div>
+                <ul class="modal__list">
+                    <li class="modal__listitem"><b>Age:</b> ${pet.age}</li>
+                    <li class="modal__listitem"><b>Inoculations:</b> ${pet.inoculations.join(', ')}</li>
+                    <li class="modal__listitem"><b>Diseases:</b> ${pet.diseases.join(', ')}</li>
+                    <li class="modal__listitem"><b>Parasites:</b> ${pet.parasites.join(', ')}</li>
+                </ul>
+            </div>
+            <div class="modal__close">x</div>
+        </div>
+    </div>`
 
     })
 }
 
-
+MODAL_WINDOW_WRAPPER.addEventListener('click', (event) => {
+    event.currentTarget.classList.toggle('hide');
+    CARD_BLACKOUT.classList.toggle('hide');
+    noScroll.classList.toggle('noScroll-active');
+});
+MODAL_CLOSE.addEventListener('click', (event) => {
+    MODAL_WINDOW_WRAPPER.classList.toggle('hide');
+    CARD_BLACKOUT.classList.toggle('hide');
+    noScroll.classList.toggle('noScroll-active');
+});
 
 
 
