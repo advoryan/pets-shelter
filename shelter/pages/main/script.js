@@ -1,4 +1,4 @@
-const PETS = [
+                       const PETS = [
     {
       "name": "Jennifer",
       "img": "../../assets/img/pets-jennifer.jpg",
@@ -88,10 +88,10 @@ const PETS = [
       "parasites": ["lice", "fleas"]
     }
 ];
-alert (`Большое спасибо, что выделили время проверке моей работе!
-На текущий момент есть только слайдер, страницы на pets и бургер-меню.
-Буду очень благодарен за замечания и предложения по ним, а также за возможность что-то исправить!!!
-Очень прошу дать мне ещё пару дней для реализации!!!`)
+// alert (`Большое спасибо, что выделили время проверке моей работе!
+// На текущий момент есть только слайдер, страницы на pets и бургер-меню.
+// Буду очень благодарен за замечания и предложения по ним, а также за возможность что-то исправить!!!
+// Очень прошу дать мне ещё пару дней для реализации!!!`)
 
 // Burger Menu
 var menuIcon = document.querySelector(".toggle-menu-icon");
@@ -391,10 +391,10 @@ for (let elem of CARDS) {
                 <h4 class="modal__breed">${pet.type} - ${pet.breed}</h4>
                 <div class="modal__description">${pet.description}</div>
                 <ul class="modal__list">
-                    <li class="modal__listitem"><b>Age:</b> ${pet.age}</li>
-                    <li class="modal__listitem"><b>Inoculations:</b> ${pet.inoculations.join(', ')}</li>
-                    <li class="modal__listitem"><b>Diseases:</b> ${pet.diseases.join(', ')}</li>
-                    <li class="modal__listitem"><b>Parasites:</b> ${pet.parasites.join(', ')}</li>
+                    <li class="modal__listitem"><b>Age: </b> ${pet.age}</li>
+                    <li class="modal__listitem"><b>Inoculations: </b> ${pet.inoculations.join(', ')}</li>
+                    <li class="modal__listitem"><b>Diseases: </b> ${pet.diseases.join(', ')}</li>
+                    <li class="modal__listitem"><b>Parasites: </b> ${pet.parasites.join(', ')}</li>
                 </ul>
             </div>
             <div class="modal__close">x</div>
