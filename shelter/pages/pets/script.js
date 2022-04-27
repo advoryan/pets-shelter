@@ -172,15 +172,19 @@ const pagesCount = () => Math.ceil(cardsCount / cardsPerPage());
 // Генерация карточек
 let items = [];
 for (let i = 0; i < (6); i++) {
-    items.push(...PETS.sort(() => Math.random() - 0.5));
+    items.push(...PETS.sort(() => Math.random() - 0.5))
 };
-// console.log(items);
+
 
 // ОТРИСОВЫВАЕМ
 const WRAPPER = document.querySelector('.slider__items');
 
 function showItems(pageN) {
+
     let nPages = pagesCount();
+
+    // let items = petsShuffle();
+
     console.log(nPages +" количество станиц");
     console.log(items.length / nPages + " элементов на экране");
     let end = pageN * (items.length / nPages)-1;
@@ -345,3 +349,68 @@ window.onresize = function(event) {
 // var itemsPerPage = 5;
 // reference to keep track of current page
 // var currentPage = 1;
+
+
+
+console.log("---------------LEARN MORE---------------------")
+
+const CARDS = document.querySelectorAll('.card');
+const CARD_BLACKOUT = document.querySelector('.cards-blackout');
+const MODAL_WINDOW_WRAPPER = document.querySelector('.modal--wrapper');
+const MODAL_WINDOW = document.querySelector('.modal');
+const MODAL_CLOSE = document.querySelector('.modal__close');
+
+const searchByName = (petName) => {
+    for (let pet of PETS) {
+        if (pet.name === petName) {
+            return pet
+        };
+    }
+}
+console.log(searchByName('Freddie'));
+
+
+for (let elem of CARDS) {
+    // console.log(elem.querySelector(".card__name").innerText)
+    elem.addEventListener('click', event => {
+        let name = event.currentTarget.querySelector(".card__name").innerText;
+        // console.log(name);
+        let pet = searchByName(name);
+        // console.log(pet);
+        MODAL_WINDOW_WRAPPER.classList.toggle('hide');
+        // MODAL_WINDOW.classList.add('show');
+        CARD_BLACKOUT.classList.toggle('hide');
+        noScroll.classList.toggle('noScroll-active');
+
+    MODAL_WINDOW.innerHTML =`
+    <div class="modal__window">
+        <div class="modal__img">
+            <img src="${pet.img}" alt="${pet.name}"></div>
+            <div class="modal__text">
+                <h3 class="modal__title">${pet.name}</h3>
+                <h4 class="modal__breed">${pet.type} - ${pet.breed}</h4>
+                <div class="modal__description">${pet.description}</div>
+                <ul class="modal__list">
+                    <li class="modal__listitem"><b>Age:</b> ${pet.age}</li>
+                    <li class="modal__listitem"><b>Inoculations:</b> ${pet.inoculations.join(', ')}</li>
+                    <li class="modal__listitem"><b>Diseases:</b> ${pet.diseases.join(', ')}</li>
+                    <li class="modal__listitem"><b>Parasites:</b> ${pet.parasites.join(', ')}</li>
+                </ul>
+            </div>
+            <div class="modal__close">x</div>
+        </div>
+    </div>`
+
+    })
+}
+
+MODAL_WINDOW_WRAPPER.addEventListener('click', (event) => {
+    event.currentTarget.classList.toggle('hide');
+    CARD_BLACKOUT.classList.toggle('hide');
+    noScroll.classList.toggle('noScroll-active');
+});
+MODAL_CLOSE.addEventListener('click', (event) => {
+    MODAL_WINDOW_WRAPPER.classList.toggle('hide');
+    CARD_BLACKOUT.classList.toggle('hide');
+    noScroll.classList.toggle('noScroll-active');
+});
