@@ -103,7 +103,8 @@ var noScroll = document.querySelector(".noScroll");
 menuIcon.addEventListener('click', () => {
     menuIcon.classList.toggle("active");
     menuDrawer.classList.toggle("open");
-    logo.classList.toggle("display-none");
+    // logo.classList.toggle("display-none");
+    menuDrawer.classList.toggle("close");
     blackout.classList.toggle("open");
     noScroll.classList.toggle('noScroll-active');
 })
