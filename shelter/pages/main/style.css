@@ -272,7 +272,7 @@ body {
   /* letter-spacing: 0.06em; */
   /* top: 50%; */
   transition: 0.5s;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 }
   .btn-slider:hover {
     background-color: #fddcc4;
@@ -431,17 +431,22 @@ body {
       position: fixed;
       z-index: 1001;
   }
+  .toggle-menu-icon.acive {
+    transform: rotate(90deg);
+    position: fixed;
+    z-index: 1001;
+}
   .menu-container {
       position: relative;
   }
   .menu-drawer {
       width: 320px;
       background-color: #292929;
-      height: 104vh;
+      height: 100vh;
       position: fixed;
       right: -1550px;
-      top: -30px;
-      /* transition: var(--animation); */
+      top: 0px;
+      display: flex;
       padding: 39px;
       display: flex;
       justify-content: center;
@@ -449,7 +454,7 @@ body {
       gap: 40px;
       flex-direction: column;
       z-index: 1000;
-
+      padding: 300px 0;
       transition: all 0.4s ease-out;
   }
   .noScroll-active { 
@@ -458,17 +463,17 @@ body {
 
   .blackout {
     top:-0px;
-    position: fixed;
+    position: absolute;
     height: 100%;
     width: 1500px;
     background: rgba(41, 41, 41, 0.6);
-    z-index: 0;
+    z-index: -1;
   }
   .open {
       right: 0px;
       /* transition: var(--animation); */
       transition: all 0.4s ease-out;
-      position: fixed;
+      /* position: fixed; */
       /* overflow:hidden; */
   }
   .close {
@@ -480,6 +485,10 @@ body {
   .nav-link {
       font-size: 32px;
       line-height: 51.2px;
+  }
+  .nav__link:nth-child(1) {
+    /* margin-top: 100px; */
+    /* padding-top:500px; */
   }
   /* END BURGER */
 }
@@ -1539,6 +1548,9 @@ align-items: center; }
 .modal__listitem b {
   padding-right: 3px;
 }
+.modal__close, .modal__wrapper {
+  cursor: var(--cursor-pointer);
+}
 
 @media (max-width: 1279px) {
   .modal__window {
@@ -1559,11 +1571,13 @@ align-items: center; }
           box-sizing: border-box;
   text-align: center;
   font: normal 400 20px/47px 'Arial', sans-serif;
+
 }
 
 @media (max-width: 767px) {
   .modal__close {
     right: -30px;
+    cursor: var(--cursor-pointer);
   }
 }
 
@@ -1573,7 +1587,7 @@ align-items: center; }
 
 .modal__close:hover {
   background-color: #F1CDB3 !important;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 }
 
 .modal__img {
